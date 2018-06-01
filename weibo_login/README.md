@@ -1,11 +1,12 @@
 **博客链接：https://www.jianshu.com/p/b312a9afc12b**
 
-**使用方法：更改weibo_login.py中的user_name，pass_word为自己的账号密码，直接运行，cookie将保存至当前文件夹**
+使用方法：更改weibo_login.py中的user_name，pass_word为自己的账号密码，直接运行，cookie将保存至当前文件夹
 
-**测试方法：更改request_test.py中的url为你的微博首页（其他需要登录才能看到的网页也可以），运行，如果输出你的微博名，表示登录成功**
+测试方法：更改request_test.py中的url为你的微博首页（其他需要登录才能看到的网页也可以），运行，如果输出你的微博名，表示登录成功
 
 
-**首先了解一下微博登录流程（fiddler或chrome）**
+**首先了解一下微博登录流程（fiddler或chrome）**   
+
 *ps1: 如果你使用fiddler，那么正常完成网页端登录即可，如果使用chrome，可输入错误密码，因为正确登录的话chrome不显示返回参数，原因未知，这里以chrome为例*  
 
 打开chrome的元素审查，点击右上角的登录按钮，弹出登录框，随便输入一个错误的账号密码（记得勾上Preserve log）
