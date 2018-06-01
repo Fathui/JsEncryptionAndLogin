@@ -1,12 +1,13 @@
-博客链接：https://www.jianshu.com/p/b312a9afc12b
+**博客链接：https://www.jianshu.com/p/b312a9afc12b**
 
-使用方法：更改weibo_login.py中的user_name，pass_word为自己的账号密码，直接运行，cookie将保存至当前文件夹
+**使用方法：更改weibo_login.py中的user_name，pass_word为自己的账号密码，直接运行，cookie将保存至当前文件夹**
 
-测试方法：更改request_test.py中的url为你的微博首页（其他需要登录才能看到的网页也可以），运行，如果输出你的微博名，表示登录成功
+**测试方法：更改request_test.py中的url为你的微博首页（其他需要登录才能看到的网页也可以），运行，如果输出你的微博名，表示登录成功**
 
 
-### 首先了解一下微博登录流程（fiddler或chrome）
-###### ps: 如果你使用fiddler，那么正常完成网页端登录即可，如果使用chrome，可输入错误密码，因为正确登录的话chrome不显示返回参数，原因未知，这里以chrome为例
+**首先了解一下微博登录流程（fiddler或chrome）**
+*ps1: 如果你使用fiddler，那么正常完成网页端登录即可，如果使用chrome，可输入错误密码，因为正确登录的话chrome不显示返回参数，原因未知，这里以chrome为例*  
+
 打开chrome的元素审查，点击右上角的登录按钮，弹出登录框，随便输入一个错误的账号密码（记得勾上Preserve log）
 
 ![登录入口.png](https://upload-images.jianshu.io/upload_images/11202986-9c76c9862ccc2faa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -30,7 +31,7 @@
 ![点击进入函数.png](https://upload-images.jianshu.io/upload_images/11202986-52b27faaaa4b75ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-###### ps: 点击进入函数的方法，需要debugger刚好运行到或者已经运行过这一行（当前函数），善用F8，将鼠标放在函数名上，或者选中函数名，会出现函数的链接，点击即可，如上图
+*ps2: 点击进入函数的方法，需要debugger刚好运行到或者已经运行过这一行（当前函数），善用F8，将鼠标放在函数名上，或者选中函数名，会出现函数的链接，点击即可，如上图*
 
 ![makeXMLRequestQuery函数.png](https://upload-images.jianshu.io/upload_images/11202986-1d4484c8f1ba946e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -68,16 +69,16 @@ def get_password(message, n, e='10001'):
     return binascii.b2a_hex(crypto)
 ```
 
-###### ps: 需要注意的几点：
+*ps3: 需要注意的几点：*
 1. 从js代码中f.setPublic(me.rsaPubkey, "10001")可以看出，并非直接导入公匙，而是通过（n,e）生成，所以python中rsa也需要使用这种方式而不是直接导入；
 2. 最终被加密的并不是原始密码，而是[me.servertime, me.nonce].join("\t") + "\n" + b，其中b为原始密码，如果不知道js怎么转换成python代码，可以直接在chrome浏览器中的Console中输出结果
 
 
-###### 找齐了参数，那么就可以进行模拟登陆了，代码在这里https://github.com/Fathui/weibo_login
+**找齐了参数，那么就可以进行模拟登陆了，代码在这里https://github.com/Fathui/weibo_login**
 
-**pps**：其实post之后， 并不是直接跳转到微博主页，而是返回一个crossdomain的连接，请求crossdomain链接后又返回一个链接····几经跳转之后才会进入微博主页，但是经过测试，只要完成第二步post参数，保存cookie到本地后，再使用该cookie进行请求，已经是登录状态了。
+*ps4：其实post之后， 并不是直接跳转到微博主页，而是返回一个crossdomain的连接，请求crossdomain链接后又返回一个链接····几经跳转之后才会进入微博主页，但是经过测试，只要完成第二步post参数，保存cookie到本地后，再使用该cookie进行请求，已经是登录状态了。*  
 
-**ppps**：post参数时，returntype选择META和TEXT是不一样的，不信你试试，不过对登录没啥影响，就不继续了
+*ps5：post参数时，returntype选择META和TEXT是不一样的，不信你试试*
 
 
 
