@@ -75,7 +75,7 @@ def get_password(message, n, e='10001'):
 2. 最终被加密的并不是原始密码，而是[me.servertime, me.nonce].join("\t") + "\n" + b，其中b为原始密码，如果不知道js怎么转换成python代码，可以直接在chrome浏览器中的Console中输出结果
 
 
-**找齐了参数，那么就可以进行模拟登陆了，代码在这里https://github.com/Fathui/weibo_login**
+**找齐了参数，那么就可以进行模拟登陆了，代码在这里https://github.com/Fathui/JsEncryptionAndLogin.git**
 
 *ps4：其实post之后， 并不是直接跳转到微博主页，而是返回一个crossdomain的连接，请求crossdomain链接后又返回一个链接····几经跳转之后才会进入微博主页，但是经过测试，只要完成第二步post参数，保存cookie到本地后，再使用该cookie进行请求，已经是登录状态了。*  
 
