@@ -177,8 +177,6 @@ var get_as_cp = function() {
     }
 };
 
-// 上面是获取as,cp的脚本，下面获取_signature
-
 var o ={};
 var e = function(a) {
     if (o[a])
