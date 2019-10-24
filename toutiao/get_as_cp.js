@@ -177,6 +177,7 @@ var get_as_cp = function() {
     }
 };
 
+// 上面是获取as,cp的脚本，下面获取_signature
 
 var o ={};
 var e = function(a) {
@@ -211,70 +212,3 @@ var get_signature = function(_hot_time, ua){
     return tac.sign(_hot_time)
 };
 
-
-// var get_signature = function(e) {
-//     var t = (0, get_as_cp)()
-//       , i = 0;
-//     this.url = this._url, "refresh" === e ?
-//         (i = this.list.length > 0 ? this.list[0].behot_time : 0, this.url += "min_behot_time=" + i) : (i = this.list.length > 0 ? this.list[this.list.length - 1].behot_time : 0,
-//     this.url += "max_behot_time=" + i);
-//
-//     var n = (0, _.sign)(i + "");
-//     (0,
-//     r.default)(this.params, {
-//         as: t.as,
-//         cp: t.cp,
-//         _signature: n
-//     })
-// };
-
-//
-// function get_values(e, _my_ua, behot_time) {
-//     var t = (0, get_as_cp)()
-//         , i = 0;
-//     if ("refresh" === e) {
-//         i = 0;
-//     }else{
-//         i = behot_time;
-//     }
-//     global.navigator = {};
-//     // global.navigator.userAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36";
-//     global.navigator.userAgent = _my_ua;
-//
-//     var r = anonymous();
-//     r('gr$Daten Иb/s!l y͒yĹg,(lfi~ah`{mv,-n|jqewVxp{rvmmx,&effkx[!cs"l".Pq%widthl"@q&heightl"vr*getContextx$"2d[!cs#l#,*;?|u.|uc{uq$fontl#vr(fillTextx$$龘ฑภ경2<[#c}l#2q*shadowBlurl#1q-shadowOffsetXl#$$limeq+shadowColorl#vr#arcx88802[%c}l#vr&strokex[ c}l"v,)}eOmyoZB]mx[ cs!0s$l$Pb<k7l l!r&lengthb%^l$1+s$jl  s#i$1ek1s$gr#tack4)zgr#tac$! +0o![#cj?o ]!l$b%s"o ]!l"l$b*b^0d#>>>s!0s%yA0s"l"l!r&lengthb<k+l"^l"1+s"jl  s&l&z0l!$ +["cs\'(0l#i\'1ps9wxb&s() &{s)/s(gr&Stringr,fromCharCodes)0s*yWl ._b&s o!])l l Jb<k$.aj;l .Tb<k$.gj/l .^b<k&i"-4j!+& s+yPo!]+s!l!l Hd>&l!l Bd>&+l!l <d>&+l!l 6d>&+l!l &+ s,y=o!o!]/q"13o!l q"10o!],l 2d>& s.{s-yMo!o!]0q"13o!]*Ld<l 4d#>>>b|s!o!l q"10o!],l!& s/yIo!o!].q"13o!],o!]*Jd<l 6d#>>>b|&o!]+l &+ s0l-l!&l-l!i\'1z141z4b/@d<l"b|&+l-l(l!b^&+l-l&zl\'g,)gk}ejo{cm,)|yn~Lij~em["cl$b%@d<l&zl\'l $ +["cl$b%b|&+l-l%8d<@b|l!b^&+ q$sign ', [_ = {}]);
-//
-//     var n = (0, _.sign)(i + "");
-//     if (i === 0){
-//         var params = {
-//             category: "__all__",
-//             utm_source: "toutiao",
-//             widen: 1,
-//             tadrequire: 'true',
-//             as: t.as,
-//             cp: t.cp,
-//             _signature: n,
-//             min_behot_time: i,
-//         };
-//     }else {
-//         var params = {
-//             category: "__all__",
-//             utm_source: "toutiao",
-//             widen: 1,
-//             tadrequire: 'true',
-//             as: t.as,
-//             cp: t.cp,
-//             _signature: n,
-//             max_behot_time: i,
-//         };
-//     }
-//
-//     return params
-// }
-
-
-// x = get_values('loadmore', '1571648908');
-// x = get_values('refresh');
-// //
-// //
-// console.log(x)
